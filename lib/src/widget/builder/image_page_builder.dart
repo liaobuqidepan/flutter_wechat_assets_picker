@@ -272,33 +272,33 @@ class _LivePhotoWidgetState extends State<_LivePhotoWidget> {
                 final scaled = imageGestureState.gestureDetails?.totalScale !=
                     imageGestureState.imageGestureConfig?.initialScale;
                 final size = MediaQuery.sizeOf(context);
-                final imageRect =
-                    GestureWidgetDelegateFromState.getRectFormState(
-                  Offset.zero & size,
-                  imageGestureState,
-                  copy: true,
-                );
-                final videoRect =
-                    GestureWidgetDelegateFromState.getRectFormState(
-                  Offset.zero & size,
-                  imageGestureState,
-                  width: _controller.value.size.width,
-                  height: _controller.value.size.height,
-                  copy: true,
-                );
+                // final imageRect =
+                //     GestureWidgetDelegateFromState.getRectFormState(
+                //   Offset.zero & size,
+                //   imageGestureState,
+                //   copy: true,
+                // );
+                // final videoRect =
+                //     GestureWidgetDelegateFromState.getRectFormState(
+                //   Offset.zero & size,
+                //   imageGestureState,
+                //   width: _controller.value.size.width,
+                //   height: _controller.value.size.height,
+                //   copy: true,
+                // );
                 return Stack(
                   children: <Widget>[
-                    imageGestureState.wrapGestureWidget(
-                      FittedBox(
-                        fit: BoxFit.cover,
-                        clipBehavior: Clip.hardEdge,
-                        child: SizedBox(
-                          width: videoRect.width,
-                          height: videoRect.height,
-                          child: VideoPlayer(_controller),
-                        ),
-                      ),
-                    ),
+                    // imageGestureState.wrapGestureWidget(
+                    //   FittedBox(
+                    //     fit: BoxFit.cover,
+                    //     clipBehavior: Clip.hardEdge,
+                    //     child: SizedBox(
+                    //       width: videoRect.width,
+                    //       height: videoRect.height,
+                    //       child: VideoPlayer(_controller),
+                    //     ),
+                    //   ),
+                    // ),
                     Positioned.fill(
                       child: AnimatedOpacity(
                         duration: kThemeChangeDuration,
@@ -306,14 +306,14 @@ class _LivePhotoWidgetState extends State<_LivePhotoWidget> {
                         child: child!,
                       ),
                     ),
-                    Positioned.fromRect(
-                      rect: imageRect,
-                      child: AnimatedOpacity(
-                        duration: kThemeChangeDuration,
-                        opacity: showVideo || scaled ? 0.0 : 1.0,
-                        child: _buildLivePhotoIndicator(context),
-                      ),
-                    ),
+                    // Positioned.fromRect(
+                    //   rect: imageRect,
+                    //   child: AnimatedOpacity(
+                    //     duration: kThemeChangeDuration,
+                    //     opacity: showVideo || scaled ? 0.0 : 1.0,
+                    //     child: _buildLivePhotoIndicator(context),
+                    //   ),
+                    // ),
                   ],
                 );
               },
